@@ -5,5 +5,7 @@ Aqui serão armazenados todos os trabalhos da Unidade Curricular de Engenharia W
 
 ## Aluno
 
--**Nome:** Matilde Maria Ferreira de Sousa Fernandes
--**id:** A95319
+- **Nome:** Matilde Maria Ferreira de Sousa Fernandes
+- **ID:** A95319
+- **Foto:** ![Fotografia do aluno] (a95319.jpeg)
+
