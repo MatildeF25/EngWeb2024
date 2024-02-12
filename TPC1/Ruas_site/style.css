@@ -1,0 +1,40 @@
+.example {
+    text-align: justify;
+    outline: 8px ridge rgba(170, 50, 220, .6);
+    outline-style: groove;
+    border-radius: 2rem;
+    padding: 15px; /* Adjust as needed */
+    width: 90%; /* Adjust as needed */
+    margin: 0 auto;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+p {
+    font-size: 1.4em;
+    text-align: justify;
+    text-align-last: left;
+    line-height: 1.6; /* Adjust as needed */
+}
+
+table td p {
+    font-size: 1.1em !important; /* Adjust as needed */
+    width: 80%; /* Adjust as needed */
+    height: auto; /* Adjust as needed */
+}
+
+.w3-table-all {
+    width: 90%; /* Adjust as needed */
+    margin: auto; /* Centers the table */
+}
+
+h3 {
+    font-size: 2.5em; /* Adjust as needed */
+    color: #c20ad3; /* Adjust as needed */
+    font-family: system-ui;
+}
+
+h1 {
+    font-size: 4em; /* Adjust as needed */
+    color: #ffffff; /* Adjust as needed */
+    font-family: system-ui;
+}
