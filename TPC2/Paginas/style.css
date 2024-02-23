@@ -1,0 +1,80 @@
+.example {
+    text-align: justify;
+    outline: 8px ridge rgba(156, 190, 252, 0.6);
+    outline-style: groove;
+    border-radius: 2rem;
+    padding: 15px; /* Adjust as needed */
+    width: 90%; /* Adjust as needed */
+    margin: 0 auto;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+p {
+    font-size: 1.4em;
+    text-align: justify;
+    text-align-last: left;
+    line-height: 1.6; /* Adjust as needed */
+    font-family: serif;
+}
+
+
+table td {
+    font-size: 1.1em !important; /* Adjust as needed */
+    width: auto; /* Adjust as needed */
+    height: auto; /* Adjust as needed */
+    font-family: serif;
+    vertical-align: middle;
+}
+
+table td p{
+    font-size: 1.1em !important; /* Adjust as needed */
+    width: 80%; /* Adjust as needed */
+    height: auto; /* Adjust as needed */
+    font-family: serif;
+    vertical-align: middle;
+}
+
+.w3-card img {
+    width: 100%; /* Adjust as needed */
+    display: block; /* Centers the image */
+    margin: auto; /* Centers the image */
+}
+
+.w3-table-all {
+    width: 100%; /* Adjust as needed */
+    margin: auto; /* Centers the table */
+}
+
+.w3-third {
+    text-align: center; /* Centers the content */
+    width: 50%; /* Adjust as needed */
+    height: auto; /* Adjust as needed */
+    display: block; /* Centers the image */
+    margin: auto; /* Centers the image */
+}
+
+.w3-card{
+    border-radius: 2rem;
+    padding: 15px; /* Adjust as needed */
+    width: 90%; /* Adjust as needed */
+    margin: 0 auto;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+
+}
+
+h3 {
+    font-size: 2.5em; /* Adjust as needed */
+    color: #6094f7; /* Adjust as needed */
+    font-family: system-ui;
+}
+
+h1 {
+    font-size: 3em; /* Adjust as needed */
+    color: #ffffff; /* Adjust as needed */
+    font-family: system-ui;
+}
+
+.w3-round-xlarge {
+    width: 100%; /* Adjust the length of the bar */
+    padding-left: 20px; /* Adjust where the text begins */
+}
