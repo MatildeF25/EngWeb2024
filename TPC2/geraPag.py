@@ -32,7 +32,7 @@ for dados in db["cidades"]:
     nome = dados["nome"]
     if (id[0] == "c"):
         btHTML += f"""
-                    <li><a href="http://localhost:77777/{id}">{nome}</a></li> """
+                    <li><a href="http://localhost:7777/{id}">{nome}</a></li> """
 
 
 posHTML = """
