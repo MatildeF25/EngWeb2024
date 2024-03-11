@@ -78,6 +78,18 @@ var server = http.createServer((req,res)=>{
                             res.end(templates.errorPage(erro,d))
                         })
                 }
+                // GET /compositores/delete/:id
+                else if(/\/compositores\/delete\/C[0-9]+$/.test(req.url)){
+                    var idCompositor = req.url.split("/")[3]
+                    axios.delete('http://localhost:3000/compositores/' + idCompositor)
+                        .then(response => {
+                            res.writeHead(200, {'Content-Type': 'text/html'})
+                            res.end(templates.compositorDeletePage(response.data,d))
+                        })
+                        .catch(erro => {
+                            res.end(templates.errorPage(erro,d))
+                        })
+                }
                 // GET /periodo
                 else if(req.url == "/periodo"){
                     axios.get('http://localhost:3000/periodo')
@@ -106,6 +118,31 @@ var server = http.createServer((req,res)=>{
                     res.writeHead(200, {'Content-Type': 'text/html'})
                     res.end(templates.periodo_form(d))
                 }
+                // GET /periodo/edit/:id
+                else if(/\/periodo\/edit\/P[0-9]+$/.test(req.url)){
+                    var idPeriodo = req.url.split("/")[3]
+                    axios.get('http://localhost:3000/periodo/' + idPeriodo)
+                        .then(response => {
+                            res.writeHead(200, {'Content-Type': 'text/html'})
+                            res.end(templates.periodo_formEdit(response.data,d))
+                        })
+                        .catch(erro => {
+                            res.end(templates.errorPage(erro,d))
+                        })
+                }
+                // GET /periodo/delete/:id
+                else if(/\/periodo\/delete\/P[0-9]+$/.test(req.url)){
+                    var idPeriodo = req.url.split("/")[3]
+                    axios.delete('http://localhost:3000/periodo/' + idPeriodo)
+                        .then(response => {
+                            res.writeHead(200, {'Content-Type': 'text/html'})
+                            res.end(templates.periodoDeletePage(response.data,d))
+                        })
+                        .catch(erro => {
+                            res.end(templates.errorPage(erro,d))
+                        })
+                }
+
                 else{
                     res.writeHead(404, {'Content-Type': 'text/html'})
                     res.end(templates.errorPage("Erro GET: " + req.url + " não está implementado!",d))
@@ -189,7 +226,7 @@ var server = http.createServer((req,res)=>{
                     collectRequestBodyData(req, result => {
                         if(result){
                             if(typeof result.compositores === 'string') {
-                                comp = result.compositores.split(",");
+                                comp = result.compositores.split(",")
                                 result.compositores = comp;
                             }
                             axios.post('http://localhost:3000/periodo', result)
@@ -198,6 +235,31 @@ var server = http.createServer((req,res)=>{
                                     res.end(templates.periodo_idPage(result,d))
                                 })
                                 .catch(erro => {
+                                    res.end(templates.errorPage(erro, d))
+                                })
+                        }
+                        else{
+                            res.writeHead(404, {'Content-Type': 'text/html'})
+                            res.write("<p>Unable to collect data from body..</p>")
+                            res.end()
+                        }
+                    })
+                }
+                // POST /periodo/edit/P[0-9]+ --------------------------------------------------------------------
+                else if(/\/periodo\/edit\/P[0-9]+/.test(req.url)){
+                    collectRequestBodyData(req, result => {
+                        if(result){
+                            if(typeof result.compositores === 'string') {
+                                comp = result.compositores.split(",")
+                                result.compositores = comp;
+                            }
+                            axios.put('http://localhost:3000/periodo/' + result.id, result)
+                                .then(response => {
+                                    res.writeHead(201, {'Content-Type': 'text/html'})
+                                    res.end(templates.periodo_idPage(result,d))
+                                })
+                                .catch(erro => {
+                                    console.log(erro)
                                     res.end(templates.errorPage(erro, d))
                                 })
                         }

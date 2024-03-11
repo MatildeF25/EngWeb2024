@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  .w3-card-4 
+    header.w3-container.w3-blue
+      h1= title
+    .w3-container
+      table.w3-table-all
+        tr
+          th Id
+          th Nome
+          th Período
+        each cp in lista
+          tr
+            td= cp.id
+            td= cp.nome
+            td= cp.periodo
+            td
+              a.w3-button.w3-blue(href="/alunos/edit/" + cp.id) Editar 
+              a.w3-button.w3-red(href="/alunos/delete/" + cp.id) Apagar
+        
+    footer.w3-container.w3-blue
+      address Gerado por EngWeb 2024 em #{data}
