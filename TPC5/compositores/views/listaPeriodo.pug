@@ -13,7 +13,13 @@ block content
         each p in lista
           tr
             td= p.id
-            td= p.nome
+            td
+              a(href="/periodo/" + p.id)= p.nome
+            td
+              a.w3-button.w3-blue(href="/periodo/edit/" + p.id) Editar 
+              a.w3-button.w3-red(href="/periodo/delete/" + p.id) Apagar
         
     footer.w3-container.w3-blue
-      address Gerado por EngWeb 2024 em #{data}
+      address Gerado por EngWeb 2024 em #{data} - 
+        | 
+        a(href='/') [Retornar]

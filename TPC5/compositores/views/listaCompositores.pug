@@ -13,11 +13,14 @@ block content
         each cp in lista
           tr
             td= cp.id
-            td= cp.nome
+            td
+              a(href="/compositores/" + cp.id)= cp.nome
             td= cp.periodo
             td
-              a.w3-button.w3-blue(href="/alunos/edit/" + cp.id) Editar 
-              a.w3-button.w3-red(href="/alunos/delete/" + cp.id) Apagar
+              a.w3-button.w3-blue(href="/compositores/edit/" + cp.id) Editar 
+              a.w3-button.w3-red(href="/compositores/delete/" + cp.id) Apagar
         
     footer.w3-container.w3-blue
-      address Gerado por EngWeb 2024 em #{data}
+      address Gerado por EngWeb 2024 em #{data} - 
+        | 
+        a(href='/') [Retornar]

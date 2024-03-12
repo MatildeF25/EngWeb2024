@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  .w3-card-4 
+    header.w3-container.w3-blue
+      h1= title
+    .w3-container
+        form.w3-container(method="post")
+            fieldset 
+                legend Metadata
+                label Id
+                input.w3-input.w3-round(type="text" name="id" readonly value=c.id)
+                label Nome
+                input.w3-input.w3-round(type="text" name="nome" value=c.nome)
+                label Bio
+                input.w3-input.w3-round(type="text" name="bio" value=c.bio)
+                label Nascimento
+                input.w3-input.w3-round(type="text" name="dataNasc" value=c.dataNasc)
+                label Morte
+                input.w3-input.w3-round(type="text" name="dataObito" value=c.dataObito)
+                label Período
+                input.w3-input.w3-round(type="text" name="periodo" value=c.periodo)
+                
+            button.w3-btn.w3-blue.w3-mb-2(type="submit") Registar
+
+
+    footer.w3-container.w3-blue
+      address Gerado por EngWeb 2024 em #{data} - 
+        | 
+        a(href='/compositores') [Retornar]
