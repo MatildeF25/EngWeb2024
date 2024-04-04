@@ -21,4 +21,4 @@ var compositoresSchema = new mongoose.Schema({
 }, { versionKey: false });
 
 
-module.exports = mongoose.model('compositore', compositoresSchema, 'compositore');
+module.exports = mongoose.model('compositore', compositoresSchema, 'compositores');

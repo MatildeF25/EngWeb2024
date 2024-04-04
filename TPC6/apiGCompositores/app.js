@@ -12,7 +12,6 @@ db.once('open', () => {
   console.log('Ligação ao MongoDB efectuada com sucesso');
 })
 
-
 var compositoresRouter = require('./routes/compositores');
 var app = express();
 
